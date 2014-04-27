@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notes</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/site.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/jquery-1.11.0.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/masonry.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/notes.js') }}"></script>
+    <script type="text/javascript">
+      $(function() {
+        new Notes.Editor();
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container content">
+      <div class="page-header">
+        <h1>Notes</h1>
+      </div>
+      <form action="." class="form" id="note-form" method="post">
+        <button class="btn btn-primary btn-xs" type="submit">
+          <span class="glyphicon glyphicon-plus"></span> Add Note
+        </button>
+        <textarea class="form-control" id="content" name="content"></textarea>
+      </form>
+      <ul class="list-unstyled notes">
+        {% for note in notes %}
+          {% include "note.html" %}
+        {% endfor %}
+      </ul>
+      <div style="clear:both;"></div>
+    </div>
+  </body>
+</html>
