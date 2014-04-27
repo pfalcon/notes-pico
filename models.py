@@ -2,9 +2,10 @@ import datetime
 
 from flask import Markup
 from markdown import markdown
+from micawber import parse_html
 from peewee import *
 
-from app import db
+from app import db, oembed
 
 class Note(Model):
     content = TextField()
@@ -15,7 +16,12 @@ class Note(Model):
         database = db
 
     def html(self):
-        return Markup(markdown(self.content))
+        html = parse_html(
+            markdown(self.content),
+            oembed,
+            maxwidth=300,
+            urlize_all=True)
+        return Markup(html)
 
     @classmethod
     def public(cls):
