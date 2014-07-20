@@ -1,31 +1,26 @@
-import datetime
+import uorm
 
-from flask import Markup
-from markdown import markdown
-from micawber import parse_html
-from peewee import *
 
-from app import db, oembed
+db = uorm.DB("sqlite.db")
 
-class Note(Model):
-    content = TextField()
-    timestamp = DateTimeField(default=datetime.datetime.now)
-    archived = BooleanField(default=False)
 
-    class Meta:
-        database = db
+class Note(uorm.Model):
 
-    def html(self):
-        html = parse_html(
-            markdown(self.content),
-            oembed,
-            maxwidth=300,
-            urlize_all=True)
-        return Markup(html)
+    __db__ = db
+    __table__ = "note"
+    __schema__ = """
+        CREATE TABLE note(
+        id INTEGER PRIMARY KEY,
+        timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        archived INT NOT NULL DEFAULT 0,
+        content TEXT NOT NULL
+        )
+    """
 
     @classmethod
     def public(cls):
-        return (Note
-                .select()
-                .where(Note.archived == False)
-                .order_by(Note.timestamp.desc()))
+        return cls.execute("""
+            SELECT * FROM note
+            WHERE archived=0
+            ORDER BY timestamp
+        """)

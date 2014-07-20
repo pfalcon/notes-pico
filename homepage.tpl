@@ -1,3 +1,4 @@
+{% args notes %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Notes</title>
-    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/site.css') }}" rel="stylesheet">
-    <script src="{{ url_for('static', filename='js/jquery-1.11.0.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/masonry.pkgd.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/notes.js') }}"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+    <script src="//masonry.desandro.com/masonry.pkgd.min.js"></script>
+    <script src="js/notes.js"></script>
     <script type="text/javascript">
       $(function() {
         new Notes.Editor();
@@ -29,9 +30,10 @@
         </button>
         <textarea class="form-control" id="content" name="content"></textarea>
       </form>
+      <br />
       <ul class="list-unstyled notes">
         {% for note in notes %}
-          {% include "note.html" %}
+          {% include "note" note %}
         {% endfor %}
       </ul>
       <div style="clear:both;"></div>

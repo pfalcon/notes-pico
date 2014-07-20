@@ -1,7 +1,8 @@
 from app import app
-from models import Note
 import views
 
 if __name__ == '__main__':
-    Note.create_table(True)
+    import logging
+    logging.basicConfig(level=logging.INFO)
+    mem_info()
     app.run(debug=True)

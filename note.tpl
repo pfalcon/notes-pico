@@ -1,14 +1,15 @@
+{% args note %}
 <li class="note col-xs-12 col-sm-6 col-lg-4">
   <div class="panel panel-primary">
     <div class="panel-heading">
-      {{ note.timestamp.strftime('%b %d, %Y %I:%M%p').lower() }}
+      {{ note[1] }}
       <a
         class="btn btn-danger btn-xs archive-note pull-right"
-        data-note="{{ note.id }}"
-        href="{{ url_for('archive_note', pk=note.id) }}">&times;</a>
+        data-note="{{ note[0] }}"
+        href="archive/{{ note[0] }}">&times;</a>
     </div>
     <div class="panel-body">
-      {{ note.html() }}
+      {{ note[3] }}
     </div>
   </div>
 </li>
