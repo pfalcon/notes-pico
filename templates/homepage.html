@@ -12,7 +12,7 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="//imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
     <script src="//masonry.desandro.com/masonry.pkgd.min.js"></script>
-    <script src="js/notes.js"></script>
+    <script src="static/js/notes.js"></script>
     <script type="text/javascript">
       $(function() {
         new Notes.Editor();
@@ -33,7 +33,7 @@
       <br />
       <ul class="list-unstyled notes">
         {% for note in notes %}
-          {% include "note" note %}
+          {% include "note.html" note %}
         {% endfor %}
       </ul>
       <div style="clear:both;"></div>

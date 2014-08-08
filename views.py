@@ -20,7 +20,7 @@ def homepage(request, response):
         if request.form.get('content'):
             note_id = Note.create(content=request.form['content'][0])
             note = list(Note.get_id(note_id))[0]
-            rendered = picoweb.render_str('note', (note,))
+            rendered = app.render_str('note.html', (note,))
             yield from picoweb.jsonify(response, {'note': rendered, 'success': 1})
             return
 
@@ -30,7 +30,7 @@ def homepage(request, response):
     yield from picoweb.start_response(response)
 #    notes = Note.public().paginate(get_page(), 50)
     notes = list(Note.public())
-    yield from picoweb.render(response, 'homepage', (notes,))
+    yield from app.render_template(response, 'homepage.html', (notes,))
 
 @app.route(re.compile('^/archive/(\d+)'), methods=['POST'])
 def archive_note(request, response):
