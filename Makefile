@@ -7,3 +7,6 @@ lib: requirements.txt
 
 run:
 	MICROPYPATH=lib micropython -X heapsize=150000 main.py
+
+clean:
+	rm -rf lib
