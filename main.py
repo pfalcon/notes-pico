@@ -4,5 +4,6 @@ import views
 if __name__ == '__main__':
     import logging
     logging.basicConfig(level=logging.INFO)
-    mem_info()
+    import micropython
+    micropython.mem_info()
     app.run(debug=True)
