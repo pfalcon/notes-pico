@@ -1,4 +1,3 @@
 picoweb
 uorm
 micropython-re-pcre
-micropython-json
