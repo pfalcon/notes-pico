@@ -7,7 +7,7 @@ lib: requirements.txt
 	#PIP_MICROPY_DEST=$$PWD pip-micropython install -r requirements.txt
 	# This requires upip from https://github.com/micropython/micropython-lib/tree/master/upip
 	# (see bootstrap_upip.sh)
-	micropython -m upip install -p lib -r requirements.txt
+	micropython -X heapsize=200wK -m upip install -p lib -r requirements.txt
 
 run:
 	MICROPYPATH=lib micropython -X heapsize=150wK main.py
