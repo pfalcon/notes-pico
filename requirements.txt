@@ -1,3 +1,4 @@
 picoweb
 uorm
+utemplate
 micropython-re-pcre
