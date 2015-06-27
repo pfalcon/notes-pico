@@ -9,4 +9,4 @@ class DBApp(picoweb.WebApp):
         models.Note.create_table(True)
         super().init()
 
-app = DBApp()
+app = DBApp(None)
