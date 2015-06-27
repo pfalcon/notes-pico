@@ -1,7 +1,7 @@
 #from flask import abort, jsonify, render_template, request
 
-from app import app
-from models import Note
+from .app import app
+from .models import Note
 
 import re
 import picoweb

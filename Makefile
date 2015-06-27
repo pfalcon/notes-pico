@@ -10,7 +10,7 @@ lib: requirements.txt
 	micropython -X heapsize=200wK -m upip install -p lib -r requirements.txt
 
 run:
-	MICROPYPATH=lib micropython -X heapsize=150wK main.py
+	MICROPYPATH=lib micropython -X heapsize=150wK -m notes_pico.main
 
 clean:
 	rm -rf lib

@@ -1,5 +1,5 @@
-from app import app
-import views
+from .app import app
+from . import views
 
 if __name__ == '__main__':
     import logging

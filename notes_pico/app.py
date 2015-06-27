@@ -1,5 +1,5 @@
 import picoweb
-import models
+from . import models
 
 
 class DBApp(picoweb.WebApp):
@@ -9,4 +9,4 @@ class DBApp(picoweb.WebApp):
         models.Note.create_table(True)
         super().init()
 
-app = DBApp(None)
+app = DBApp(__name__)
