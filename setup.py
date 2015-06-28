@@ -8,6 +8,6 @@ web pico-framework. (Ported from Flask original)""",
       url='https://github.com/pfalcon/notes-pico',
       author='Charles Leifer, Paul Sokolovsky',
       author_email='pfalcon@users.sourceforge.net',
-      license='To be clarified',
+      license='Public Domain',
       packages=['notes_pico', 'notes_pico.templates.compiled'],
-      install_requires=['picoweb', 'uorm', 'utemplate', 'micropython-re-pcre'])
+      install_requires=['picoweb', 'uorm', 'utemplate', 'micropython-re-pcre', 'micropython-os.path'])
