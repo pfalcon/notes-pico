@@ -1,4 +1,5 @@
 picoweb
 uorm
+micropython-filedb
 utemplate
 micropython-re-pcre
