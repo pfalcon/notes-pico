@@ -1,4 +1,4 @@
-from _collections import OrderedDict
+from ucollections import OrderedDict
 import filedb as uorm
 
 
