@@ -10,4 +10,4 @@ web pico-framework. (Ported from Flask original)""",
       author_email='pfalcon@users.sourceforge.net',
       license='Public Domain',
       packages=['notes_pico', 'notes_pico.templates.compiled'],
-      install_requires=['picoweb', 'uorm', 'utemplate', 'micropython-re-pcre', 'micropython-os.path'])
+      install_requires=['picoweb', 'uorm', 'utemplate', 'micropython-os.path'])

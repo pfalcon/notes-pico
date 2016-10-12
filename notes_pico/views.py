@@ -3,7 +3,7 @@
 from .app import app
 from .models import Note
 
-import re
+import ure as re
 import picoweb
 
 def get_page():
