@@ -2,9 +2,10 @@ from setuptools import setup, find_packages
 
 
 setup(name='notes-pico',
-      version='0.6',
+      version='0.6.1',
       description="""A note-taking example web application for Picoweb
 web pico-framework. (Ported from Flask original)""",
+      long_description=open('README.rst').read(),
       url='https://github.com/pfalcon/notes-pico',
       author='Charles Leifer, Paul Sokolovsky',
       author_email='pfalcon@users.sourceforge.net',
