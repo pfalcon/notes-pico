@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 
 setup(name='notes-pico',
-      version='0.5',
+      version='0.6',
       description="""A note-taking example web application for Picoweb
 web pico-framework. (Ported from Flask original)""",
       url='https://github.com/pfalcon/notes-pico',
@@ -10,4 +10,4 @@ web pico-framework. (Ported from Flask original)""",
       author_email='pfalcon@users.sourceforge.net',
       license='Public Domain',
       packages=['notes_pico', 'notes_pico.templates.compiled'],
-      install_requires=['picoweb', 'uorm', 'utemplate', 'micropython-os.path'])
+      install_requires=['picoweb', 'utemplate', 'micropython-filedb'])
