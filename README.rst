@@ -1,7 +1,7 @@
 notes-pico
 ==========
 
-Notes Pico as a simple note-taking web application. It was originally
+Notes Pico is a simple note-taking web application. It was originally
 written by Charles Leifer as a demo of how to write a simple, but slick
 web application using the Flask web micro-framework. The application is
 described in the blog post
@@ -50,8 +50,8 @@ directory, one file per note.
 If you would like to try SQLite3 backend, you'll need to checkout
 https://github.com/pfalcon/notes-pico and edit file
 ``notes_pico/config.py``. The repository has a convenience
-Makefile to install dependencies and run the applications similar
-to the commands above.
+Makefile to install dependencies and run the application, similar
+to the effect achieved by the commands above.
 
 
 Known issues and limitations
