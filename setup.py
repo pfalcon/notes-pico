@@ -1,4 +1,5 @@
 from setuptools import setup, find_packages
+import optimize_upip
 
 
 setup(name='notes-pico',
@@ -10,5 +11,6 @@ web pico-framework. (Ported from Flask original)""",
       author='Charles Leifer, Paul Sokolovsky',
       author_email='pfalcon@users.sourceforge.net',
       license='Public Domain',
+      cmdclass={'optimize_upip': optimize_upip.OptimizeUpip},
       packages=['notes_pico', 'notes_pico.templates.compiled'],
       install_requires=['picoweb', 'utemplate', 'micropython-filedb'])
