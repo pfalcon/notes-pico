@@ -39,5 +39,3 @@ def archive_note(request, response):
     print("archive_note", pkey)
     Note.update({"timestamp": pkey}, archived=1)
     yield from picoweb.jsonify(response, {'success': True})
-
-app.add_url_rule('/js/notes.js', lambda req, resp: (yield from picoweb.sendfile(resp, "js/notes.js")))
