@@ -21,7 +21,7 @@ the app (``~/tmp/`` should be good for a quick test) and install
 ``app`` (argument of ``-p`` option) is a subdirectory into which to
 install the application. To run the app, execute::
 
-    MICROPYPATH=app micropython -m notes_pico.main
+    MICROPYPATH=app micropython -m notes_pico
 
 This will initialize note storage and output a URL to open in a browser::
 
@@ -36,19 +36,20 @@ original Flask application.
 Storage backends
 ----------------
 
-Notes Pico supports 2 storage backends:
+Notes Pico supports 3 storage backends:
 
-* SQLite3
+* BTree
 * Filesystem
+* SQLite3
 
 As a first step towards portability to MicroPython microcontroller
 versions, the default backend for the package installed from PyPI
-via the commands in the previous section is filesystem storage.
-The notes are stored in ``notes-db`` subdirectory of the current
-directory, one file per note.
+via the commands in the previous section is BTree database. The
+notes are stored in ``notes.db`` database file of the current
+directory, in BerkeleyDB 1.x format.
 
-If you would like to try SQLite3 backend, you'll need to checkout
-https://github.com/pfalcon/notes-pico and edit file
+If you would like to try filesystem/SQLite3 backend, you'll need to
+checkout https://github.com/pfalcon/notes-pico and edit file
 ``notes_pico/config.py``. The repository has a convenience
 Makefile to install dependencies and run the application, similar
 to the effect achieved by the commands above.
@@ -60,6 +61,6 @@ Known issues and limitations
 As mentioned above, Picoweb port of the application supports only
 plain-text notes, no formatting, images or videos.
 
-Currently, Notes Pico work only with "Unix" MicroPython port,
+Currently, Notes Pico tested only with "Unix" MicroPython port,
 though there's intention to make it work on microcontroller ports
 with networking support and suitable resources.
