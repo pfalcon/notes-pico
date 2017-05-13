@@ -1,6 +1,11 @@
 from . import config
 
-if config.USE_SQLITE:
+
+if config.DB_BACKEND == "btree":
+    from .models_btree import *
+elif config.DB_BACKEND == "filedb":
+    from .models_filedb import *
+elif config.DB_BACKEND == "sqlite":
     from .models_sqlite import *
 else:
-    from .models_filedb import *
+    raise ValueError("Unknown DB backend")
