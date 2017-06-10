@@ -1,5 +1,6 @@
 picoweb
 utemplate
+micropython-pkg_resources
 #uorm
 #micropython-filedb
 micropython-btreedb
