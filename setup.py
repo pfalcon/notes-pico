@@ -3,7 +3,7 @@ import optimize_upip
 
 
 setup(name='notes-pico',
-      version='0.8',
+      version='0.8.5',
       description="""A note-taking example web application for Picoweb
 web pico-framework. (Ported from Flask original)""",
       long_description=open('README.rst').read(),
@@ -13,4 +13,4 @@ web pico-framework. (Ported from Flask original)""",
       license='Public Domain',
       cmdclass={'optimize_upip': optimize_upip.OptimizeUpip},
       packages=['notes_pico', 'notes_pico.templates'],
-      install_requires=['picoweb', 'utemplate', 'micropython-filedb'])
+      install_requires=['picoweb', 'utemplate', 'micropython-pkg_resources', 'micropython-btreedb'])
