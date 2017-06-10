@@ -3,7 +3,7 @@ import optimize_upip
 
 
 setup(name='notes-pico',
-      version='0.7',
+      version='0.8',
       description="""A note-taking example web application for Picoweb
 web pico-framework. (Ported from Flask original)""",
       long_description=open('README.rst').read(),
