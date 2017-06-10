@@ -9,6 +9,10 @@ http://charlesleifer.com/blog/saturday-morning-hack-a-little-note-taking-app-wit
 . Notes Pico is a port of this application to Picoweb web pico-framework
 for MicroPython. It was ported by Paul Sokolovsky.
 
+
+Deploying on MicroPython "Unix" version
+---------------------------------------
+
 To install and run the application, you should install MicroPython
 "Unix" port as described at https://github.com/micropython/micropython .
 Once you have ``micropython`` executable in your PATH (recommended, but
@@ -31,6 +35,29 @@ Open the link and start adding notes (after typing text press "Add note"
 button or press Ctrl+Enter). Note that Picoweb port is intended to be
 simple and low-resource, so supports only plain-text notes, unlike the
 original Flask application.
+
+
+Deploying on embedded MicroPython targets
+-----------------------------------------
+
+Notes Pico can also run on "embedded" (microcontroller) MicroPython
+targets with networking capabilities and suitable heap size (TBC).
+As Notes Pico is full-stack application and contains relatively a
+lot of code, the only realistic way to deploy it on such systems is
+using "frozen bytecode" approach, where pre-compiled Python modules
+are made part of the binary firmware image to flash on the target.
+Instructions below use MicroPython ESP8266 port as an example.
+
+1. ``cd micropython/esp8266``
+2. ``micropython -m upip install -p modules notes-pico``
+3. ``make``
+4. ``make deploy`` (see README in the directory for more params)
+5. Boot ESP8266 module, run following commands at the device prompt.
+6. ``import notes_pico.__main__``
+7. ``notes_pico.__main__.main(host="0.0.0.0")``
+8. Connect with a web browser to http://`DEVICE_IP`:8081, where
+   `DEVICE_IP` is an IP address of ESP8266 device. (Consult MicroPython
+   ESP8266 port documentation for network connection setup.)
 
 
 Storage backends
@@ -61,6 +88,4 @@ Known issues and limitations
 As mentioned above, Picoweb port of the application supports only
 plain-text notes, no formatting, images or videos.
 
-Currently, Notes Pico tested only with "Unix" MicroPython port,
-though there's intention to make it work on microcontroller ports
-with networking support and suitable resources.
+Embedded targets support is experimental, added in version 0.8.
