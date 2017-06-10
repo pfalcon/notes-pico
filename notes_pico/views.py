@@ -30,7 +30,7 @@ def homepage(request, response):
 
     yield from picoweb.start_response(response)
 #    notes = Note.public().paginate(get_page(), 50)
-    notes = list(Note.public())
+    notes = Note.public()
     yield from app.render_template(response, 'homepage.html', (notes,))
 
 @app.route(re.compile('^/archive/(.+)'), methods=['POST'])
