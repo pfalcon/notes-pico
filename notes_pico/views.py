@@ -5,6 +5,7 @@ from .models import Note
 
 import ure as re
 import picoweb
+from . import ijson
 
 def get_page():
     page = request.args.get('page')
@@ -21,8 +22,9 @@ def homepage(request, response):
             note_id = Note.create(content=request.form['content'][0])
             note = list(Note.get_id(note_id))[0]
             print("note after create:", note)
-            rendered = app.render_str('note.html', (note,))
-            yield from picoweb.jsonify(response, {'note': rendered, 'success': 1})
+            tmpl = app._load_template('note.html')
+            yield from picoweb.start_response(response, "application/json")
+            yield from response.awriteiter(ijson.idumps({'note': tmpl(note), 'success': 1}))
             return
 
         yield from picoweb.jsonify(response, {'success': 0})
