@@ -1,5 +1,6 @@
 picoweb
 utemplate
+micropython-logging
 micropython-pkg_resources
 #uorm
 #micropython-filedb

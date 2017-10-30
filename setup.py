@@ -13,4 +13,5 @@ web pico-framework. (Ported from Flask original)""",
       license='Public Domain',
       cmdclass={'optimize_upip': optimize_upip.OptimizeUpip},
       packages=['notes_pico', 'notes_pico.templates'],
-      install_requires=['picoweb', 'utemplate', 'micropython-pkg_resources', 'micropython-btreedb'])
+      install_requires=['picoweb', 'utemplate', 'micropython-logging',
+        'micropython-pkg_resources', 'micropython-btreedb'])
