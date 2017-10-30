@@ -4,8 +4,7 @@ import optimize_upip
 
 setup(name='notes-pico',
       version='0.8.5',
-      description="""A note-taking example web application for Picoweb
-web pico-framework. (Ported from Flask original)""",
+      description="""A note-taking example web application for Picoweb web pico-framework. (Ported from Flask original)""",
       long_description=open('README.rst').read(),
       url='https://github.com/pfalcon/notes-pico',
       author='Charles Leifer, Paul Sokolovsky',
