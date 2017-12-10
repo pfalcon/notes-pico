@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-import optimize_upip
+import sdist_upip
 
 
 setup(name='notes-pico',
@@ -10,7 +10,7 @@ setup(name='notes-pico',
       author='Charles Leifer, Paul Sokolovsky',
       author_email='pfalcon@users.sourceforge.net',
       license='Public Domain',
-      cmdclass={'optimize_upip': optimize_upip.OptimizeUpip},
+      cmdclass={'sdist': sdist_upip.sdist},
       packages=['notes_pico', 'notes_pico.templates'],
       install_requires=['picoweb', 'utemplate', 'micropython-logging',
         'micropython-pkg_resources', 'micropython-btreedb'])
