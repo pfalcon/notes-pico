@@ -4,7 +4,7 @@
 # upip package manager.
 #
 # Preprocessing steps:
-#  * Creation of Python resource module (R.py) from each top-level package
+#  * Creation of Python resource module (R.py) from each top-level package's
 #    resources.
 # Postprocessing steps:
 #  * Removing metadata files not used by upip (this includes setup.py)
@@ -21,7 +21,7 @@ import re
 import io
 
 from distutils.filelist import FileList
-from distutils.command.sdist import sdist as _sdist
+from setuptools.command.sdist import sdist as _sdist
 
 
 def gzip_4k(inf, fname):
