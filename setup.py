@@ -3,7 +3,7 @@ import sdist_upip
 
 
 setup(name='notes-pico',
-      version='0.8.8',
+      version='0.8.9',
       description="""A note-taking example web application for Picoweb web pico-framework. (Ported from Flask original)""",
       long_description=open('README.rst').read(),
       url='https://github.com/pfalcon/notes-pico',

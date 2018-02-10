@@ -9,12 +9,16 @@ http://charlesleifer.com/blog/saturday-morning-hack-a-little-note-taking-app-wit
 . Notes Pico is a port of this application to Picoweb web pico-framework
 for MicroPython. It was ported by Paul Sokolovsky.
 
+**NOTE**: Recent versions of ``uasyncio`` async framework and Picoweb
+web framework, and thus Notes Pico, require "advanced" fork of
+MicroPython at https://github.com/pfalcon/micropython .
+
 
 Deploying on MicroPython "Unix" version
 ---------------------------------------
 
 To install and run the application, you should install MicroPython
-"Unix" port as described at https://github.com/micropython/micropython .
+"Unix" port as described at https://github.com/pfalcon/micropython .
 Once you have ``micropython`` executable in your PATH (recommended, but
 not strictly necessary), change directory to where you want to install
 the app (``~/tmp/`` should be good for a quick test) and install
