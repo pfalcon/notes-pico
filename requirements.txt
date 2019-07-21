@@ -1,7 +1,7 @@
 picoweb
 utemplate
-micropython-logging
-micropython-pkg_resources
+pycopy-ulogging
+pycopy-pkg_resources
 #uorm
-#micropython-filedb
-micropython-btreedb
+#pycopy-filedb
+pycopy-btreedb
