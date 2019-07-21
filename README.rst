@@ -6,19 +6,17 @@ written by Charles Leifer as a demo of how to write a simple, but slick
 web application using the Flask web micro-framework. The application is
 described in the blog post
 http://charlesleifer.com/blog/saturday-morning-hack-a-little-note-taking-app-with-flask/
-. Notes Pico is a port of this application to Picoweb web pico-framework
-for MicroPython. It was ported by Paul Sokolovsky.
-
-**NOTE**: Recent versions of ``uasyncio`` async framework and Picoweb
-web framework, and thus Notes Pico, require "advanced" fork of
-MicroPython at https://github.com/pfalcon/micropython .
+. Notes Pico is a port of this application to the
+[Picoweb](https://github.com/pfalcon/picoweb/) web pico-framework
+for Pycopy (https://github.com/pfalcon/pycopy), a minimalist Python
+implementation. It was ported by Paul Sokolovsky.
 
 
-Deploying on MicroPython "Unix" version
----------------------------------------
+Deploying on Pycopy "Unix" version
+----------------------------------
 
-To install and run the application, you should install MicroPython
-"Unix" port as described at https://github.com/pfalcon/micropython .
+To install and run the application, you should install Pycopy
+"Unix" port as described at https://github.com/pfalcon/pycopy .
 Once you have ``micropython`` executable in your PATH (recommended, but
 not strictly necessary), change directory to where you want to install
 the app (``~/tmp/`` should be good for a quick test) and install
@@ -41,18 +39,18 @@ simple and low-resource, so supports only plain-text notes, unlike the
 original Flask application.
 
 
-Deploying on embedded MicroPython targets
------------------------------------------
+Deploying on embedded Pycopy targets
+------------------------------------
 
-Notes Pico can also run on "embedded" (microcontroller) MicroPython
+Notes Pico can also run on "embedded" (microcontroller) Pycopy
 targets with networking capabilities and suitable heap size (TBC).
 As Notes Pico is full-stack application and contains relatively a
 lot of code, the only realistic way to deploy it on such systems is
 using "frozen bytecode" approach, where pre-compiled Python modules
 are made part of the binary firmware image to flash on the target.
-Instructions below use MicroPython ESP8266 port as an example.
+Instructions below use Pycopy ESP8266 port as an example.
 
-1. ``cd micropython/esp8266``
+1. ``cd pycopy/ports/esp8266``
 2. ``micropython -m upip install -p modules notes-pico``
 3. ``make``
 4. ``make deploy`` (see README in the directory for more params)
@@ -60,7 +58,7 @@ Instructions below use MicroPython ESP8266 port as an example.
 6. ``import notes_pico.__main__``
 7. ``notes_pico.__main__.main(host="0.0.0.0")``
 8. Connect with a web browser to http://`DEVICE_IP`:8081, where
-   `DEVICE_IP` is an IP address of ESP8266 device. (Consult MicroPython
+   `DEVICE_IP` is an IP address of ESP8266 device. (Consult Pycopy
    ESP8266 port documentation for network connection setup.)
 
 
@@ -73,7 +71,7 @@ Notes Pico supports 3 storage backends:
 * Filesystem
 * SQLite3
 
-As a first step towards portability to MicroPython microcontroller
+As a first step towards portability to Pycopy microcontroller
 versions, the default backend for the package installed from PyPI
 via the commands in the previous section is BTree database. The
 notes are stored in ``notes.db`` database file of the current
