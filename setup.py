@@ -3,7 +3,7 @@ import sdist_upip
 
 
 setup(name='notes-pico',
-      version='0.9',
+      version='0.9.2',
       description="""A note-taking example web application for Picoweb web pico-framework. (Ported from Flask original)""",
       long_description=open('README.rst').read(),
       url='https://github.com/pfalcon/notes-pico',
@@ -12,5 +12,5 @@ setup(name='notes-pico',
       license='Public Domain',
       cmdclass={'sdist': sdist_upip.sdist},
       packages=['notes_pico', 'notes_pico.templates'],
-      install_requires=['picoweb', 'utemplate', 'pycopy-logging',
+      install_requires=['picoweb', 'utemplate', 'pycopy-ulogging',
         'pycopy-pkg_resources', 'pycopy-btreedb'])
