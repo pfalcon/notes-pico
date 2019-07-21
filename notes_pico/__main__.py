@@ -4,7 +4,7 @@ import gc
 
 def main(**params):
     gc.collect()
-    import logging
+    import ulogging as logging
     logging.basicConfig(level=logging.INFO)
 
     # Preload templates to avoid memory fragmentation issues
