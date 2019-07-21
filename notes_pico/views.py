@@ -19,7 +19,7 @@ def homepage(request, response):
         print(request.headers)
         yield from request.read_form_data()
         if request.form.get('content'):
-            note_id = Note.create(content=request.form['content'][0])
+            note_id = Note.create(content=request.form['content'])
             note = list(Note.get_id(note_id))[0]
             print("note after create:", note)
             tmpl = app._load_template('note.html')
