@@ -1,10 +1,10 @@
+import ulogging as logging
 from .app import app
 from . import views
 import gc
 
 def main(**params):
     gc.collect()
-    import ulogging as logging
     logging.basicConfig(level=logging.INFO)
 
     # Preload templates to avoid memory fragmentation issues
