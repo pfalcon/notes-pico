@@ -1,6 +1,12 @@
+# This module is part of Pycopy https://github.com/pfalcon/pycopy
+# and pycopy-lib https://github.com/pfalcon/pycopy-lib, projects to
+# create a (very) lightweight full-stack Python distribution.
+#
+# Copyright (c) 2016-2019 Paul Sokolovsky
+# Licence: MIT
 #
 # This module overrides distutils (also compatible with setuptools) "sdist"
-# command to perform pre- and post-processing as required for MicroPython's
+# command to perform pre- and post-processing as required for Pycopy's
 # upip package manager.
 #
 # Preprocessing steps:
@@ -85,7 +91,11 @@ def make_resource_module(manifest_files):
         resources = []
         # Any non-python file included in manifest is resource
         for fname in manifest_files:
-            ext = fname.rsplit(".", 1)[1]
+            ext = fname.rsplit(".", 1)
+            if len(ext) > 1:
+                ext = ext[1]
+            else:
+                ext = ""
             if ext != "py":
                 resources.append(fname)
 
