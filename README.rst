@@ -17,17 +17,17 @@ Deploying on Pycopy "Unix" version
 
 To install and run the application, you should install Pycopy
 "Unix" port as described at https://github.com/pfalcon/pycopy .
-Once you have ``micropython`` executable in your PATH (recommended, but
+Once you have ``pycopy`` executable in your PATH (recommended, but
 not strictly necessary), change directory to where you want to install
 the app (``~/tmp/`` should be good for a quick test) and install
 ``notes-pico`` package::
 
-    micropython -m upip install -p app notes-pico
+    pycopy -m upip install -p app notes-pico
 
 ``app`` (argument of ``-p`` option) is a subdirectory into which to
 install the application. To run the app, execute::
 
-    MICROPYPATH=app micropython -m notes_pico
+    MICROPYPATH=app pycopy -m notes_pico
 
 This will initialize note storage and output a URL to open in a browser::
 
@@ -51,7 +51,7 @@ are made part of the binary firmware image to flash on the target.
 Instructions below use Pycopy ESP8266 port as an example.
 
 1. ``cd pycopy/ports/esp8266``
-2. ``micropython -m upip install -p modules notes-pico``
+2. ``pycopy -m upip install -p modules notes-pico``
 3. ``make``
 4. ``make deploy`` (see README in the directory for more params)
 5. Boot ESP8266 module, run following commands at the device prompt.
