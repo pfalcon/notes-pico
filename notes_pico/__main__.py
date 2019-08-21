@@ -3,7 +3,7 @@ from .app import app
 from . import views
 import gc
 
-def main(**params):
+def __main__(**params):
     gc.collect()
     logging.basicConfig(level=logging.INFO)
 
@@ -18,4 +18,4 @@ def main(**params):
     app.run(debug=True, **params)
 
 if __name__ == '__main__':
-    main()
+    __main__()
